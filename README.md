@@ -1,3 +1,10 @@
+# To deploy
+
+```bash
+npm install
+npm run dev
+```
+
 Task Description:
 
 Create a simple registration page using any Javascript framework (preferably ReactJS). Feel free to use any validation libraries, http request libraries, CSS libraries or any other library you feel necessary. 
