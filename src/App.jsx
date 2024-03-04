@@ -5,6 +5,7 @@ import './App.css'
 import { Box, CssBaseline, Divider, useMediaQuery, Container, Paper } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CancelOutlined from '@mui/icons-material/CancelOutlined';
 import Alert from '@mui/material/Alert';
 
 import { createUser } from './api'
@@ -89,7 +90,9 @@ function App() {
           >
             {submissionResult && (
               <Alert
-                icon={<CheckCircleOutlineIcon fontSize="inherit" />}
+                icon={submissionResult.title === "Registration Error" ?
+                  <CancelOutlined fontSize="inherit" /> :
+                  <CheckCircleOutlineIcon fontSize="inherit" />}
                 severity={submissionResult.title === "Registration Error" ? "error" : "success"}
                 style={{ width: matches ? null : "100%" }}
               >
