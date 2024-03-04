@@ -1,0 +1,26 @@
+
+.banner {
+  background: #252F3D;
+  padding-left: 20px;
+  height: 56.83px;
+  display: flex;
+  align-items: center;
+}
+
+.banner img {
+  margin-left: 16px; /* Adjust as needed */
+  height: 16px;
+}
+
+@media screen and (min-width: 600px) {
+  .banner img {
+    margin-left: 120px;
+    height: 32px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
