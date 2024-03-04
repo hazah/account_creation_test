@@ -27,7 +27,7 @@ export const FormFields = ({ form }) => {
     <>
       <Grid item xs={12}>
         <Box marginBottom={2} marginTop={3}>
-          <InputLabel htmlFor="full-name" >Full Name<span style={{ color: "red" }}>*</span></InputLabel>
+          <InputLabel htmlFor="full-name" style={{ fontWeight: 'bold'}}>Full Name</InputLabel>
           <form.Field
             name="full_name"
             validators={{
@@ -37,7 +37,7 @@ export const FormFields = ({ form }) => {
               <FormControl fullWidth>
                 <TextField
                   type="text"
-                  label="Full Name"
+                  label={<>Full Name <span style={{ color: "red" }}>*</span></>}
                   id="full-name"
                   name={field.name}
                   variant="outlined"
@@ -55,15 +55,16 @@ export const FormFields = ({ form }) => {
       </Grid>
       <Grid item xs={12}>
         <Box marginBottom={2}>
-          <InputLabel htmlFor="contact-number">Contact Number<span style={{ color: "red" }}>*</span></InputLabel>
+          <InputLabel htmlFor="contact-number" style={{ fontWeight: 'bold'}}>Contact Number</InputLabel>
           <form.Field name="contact_number"
             validators={{
               onSubmit: ({ value }) => validateContactNumber(value)
             }}
             children={(field) => (
               <FormControl fullWidth>
-                <TextField type="telephone"
-                  label="Contact Number"
+                <TextField type="tel"
+                  pattern="[0-9]{10}"
+                  label={<>Contact Number <span style={{ color: "red" }}>*</span></>}
                   name={field.name}
                   variant="outlined"
                   value={field.state.value}
@@ -83,7 +84,7 @@ export const FormFields = ({ form }) => {
       <Grid item xs={12}>
         <Box marginBottom={2}>
           <Box marginBottom={2}>
-            <InputLabel htmlFor="birth-date">Birth Date<span style={{ color: "red" }}>*</span></InputLabel>
+            <InputLabel htmlFor="birth-date" style={{ fontWeight: 'bold'}}>Birthate</InputLabel>
           </Box>
           <Grid container spacing={2}>
             <form.Field name="day"
@@ -95,7 +96,7 @@ export const FormFields = ({ form }) => {
                   <FormControl variant="outlined" sx={{ minWidth: 120 }} fullWidth
                     error={field.state.meta.errors.length > 0}
                   >
-                    <InputLabel id="day-label">Day<span style={{ color: "red" }}>*</span></InputLabel>
+                    <InputLabel id="day-label">Day <span style={{ color: "red" }}>*</span></InputLabel>
                     <Select name={field.name}
                       labelId="day-label"
                       value={field.state.value}
@@ -123,7 +124,7 @@ export const FormFields = ({ form }) => {
                   <FormControl sx={{ minWidth: 120 }} variant="outlined" fullWidth
                     error={field.state.meta.errors.length > 0}
                   >
-                    <InputLabel id="month-label">Month<span style={{ color: "red" }}>*</span></InputLabel>
+                    <InputLabel id="month-label">Month <span style={{ color: "red" }}>*</span></InputLabel>
                     <Select name={field.name}
                       labelId="month-label"
                       value={field.state.value}
@@ -164,7 +165,7 @@ export const FormFields = ({ form }) => {
                   <FormControl sx={{ minWidth: 120 }} variant="outlined" fullWidth
                     error={field.state.meta.errors.length > 0}
                   >
-                    <InputLabel id="year-label">Year<span style={{ color: "red" }}>*</span></InputLabel>
+                    <InputLabel id="year-label">Year <span style={{ color: "red" }}>*</span></InputLabel>
                     <Select name={field.name}
                       labelId="year-label"
                       value={field.state.value}
@@ -188,7 +189,7 @@ export const FormFields = ({ form }) => {
       </Grid>
       <Grid item xs={12}>
         <Box marginBottom={2}>
-          <InputLabel htmlFor="email">Email Address<span style={{ color: "red" }}>*</span></InputLabel>
+          <InputLabel htmlFor="email" style={{ fontWeight: 'bold'}}>Email Address</InputLabel>
           <form.Field name="email"
             validators={{
               onSubmit: ({ value }) => validateEmail(value)
@@ -196,7 +197,7 @@ export const FormFields = ({ form }) => {
             children={(field) => (
               <FormControl fullWidth>
                 <TextField type="email"
-                  label="Email Address"
+                  label={<>Email Address <span style={{ color: "red" }}>*</span></>}
                   variant="outlined"
                   name={field.name}
                   value={field.state.value}
@@ -214,7 +215,7 @@ export const FormFields = ({ form }) => {
       </Grid>
       <Grid item xs={12}>
         <Box marginBottom={2}>
-          <InputLabel htmlFor="password">Password<span style={{ color: "red" }}>*</span></InputLabel>
+          <InputLabel htmlFor="password" style={{ fontWeight: 'bold'}}>Password</InputLabel>
           <form.Field name="password"
             validators={{
               onSubmit: ({ value }) => validatePassword(value)
@@ -222,7 +223,7 @@ export const FormFields = ({ form }) => {
             children={(field) => (
               <FormControl fullWidth>
                 <TextField type="password"
-                  label="Create Password"
+                  label={<>Create Password <span style={{ color: "red" }}>*</span></>}
                   name={field.name}
                   variant="outlined"
                   value={field.state.value}
@@ -240,7 +241,7 @@ export const FormFields = ({ form }) => {
       </Grid>
       <Grid item xs={12}>
         <Box marginBottom={2}>
-          <InputLabel htmlFor="confirm-password">Confirm Password<span style={{ color: "red" }}>*</span></InputLabel>
+          <InputLabel htmlFor="confirm-password" style={{ fontWeight: 'bold'}}>Confirm Password</InputLabel>
           <form.Field name="confirm_password"
             validators={{
               onSubmit: ({ value, fieldApi }) => validateConfirmPassword(
@@ -250,7 +251,7 @@ export const FormFields = ({ form }) => {
             children={(field) => (
               <FormControl fullWidth>
                 <TextField type="password"
-                  label="Confirm Password"
+                  label={<>Confirm Password <span style={{ color: "red" }}>*</span></>}
                   name={field.name}
                   variant="outlined"
                   value={field.state.value}
